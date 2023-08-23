@@ -8,9 +8,9 @@ GORM Oracle driver for connect Oracle DB and Manage Oracle DB, not recommended f
 [go-ora](https://github.com/sijms/go-ora) A pure golang development of Oracle driver, do not need to install Oracle client.
 ## Required dependency Install
 
-- Golang 1.13+
+- Golang 1.17+
 - gorm 1.24.0+
-- go-ora v2
+- go-ora v2.7.16
 ## Quick Start
 ### how to install 
 ```bash
