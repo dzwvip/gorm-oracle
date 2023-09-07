@@ -65,7 +65,11 @@ func (m Migrator) HasTable(value interface{}) bool {
 func (m Migrator) ColumnTypes(value interface{}) ([]gorm.ColumnType, error) {
 	columnTypes := make([]gorm.ColumnType, 0)
 	execErr := m.RunWithValue(value, func(stmt *gorm.Statement) (err error) {
-		rows, err := m.DB.Session(&gorm.Session{}).Table(stmt.Schema.Table).Where("ROWNUM = 1").Rows()
+		table := stmt.Table
+		if stmt.Schema != nil {
+			table = stmt.Schema.Table
+		}
+		rows, err := m.DB.Session(&gorm.Session{}).Table(table).Where("ROWNUM = 1").Rows()
 		if err != nil {
 			return err
 		}
