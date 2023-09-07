@@ -3,7 +3,7 @@
 
 ## Description
 
-GORM Oracle driver for connect Oracle DB and Manage Oracle DB, not recommended for use in a production environment
+GORM Oracle driver for connect Oracle DB and Manage Oracle DB,Based on [dzwvip/oracle](https://github.com/dzwvip/oracle)
 ## DB Driver
 [go-ora](https://github.com/sijms/go-ora) A pure golang development of Oracle driver, do not need to install Oracle client.
 ## Required dependency Install
@@ -21,7 +21,7 @@ go get github.com/dzwvip/gorm-oracle
 ```go
 import (
 	"fmt"
-      oracle "github.com/dzwvip/gorm-oracle"
+       oracle "github.com/dzwvip/gorm-oracle"
 	"gorm.io/gorm"
 	"log"
 )
@@ -35,3 +35,5 @@ func main() {
     // do somethings
 }
 ```
+### US7ASCII
+ORACLE字符集为US7ASCII时，连接参数加上 client charset=ZHS16GBK 例如："oracle://system:manager@127.0.0.1:1521/orcl?client charset=ZHS16GBK"
