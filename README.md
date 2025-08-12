@@ -21,7 +21,7 @@ go get github.com/dzwvip/gorm-oracle
 ```go
 import (
 	"fmt"
-       oracle "github.com/dzwvip/gorm-oracle"
+     oracle "github.com/dzwvip/gorm-oracle"
 	"gorm.io/gorm"
 	"log"
 )
@@ -69,3 +69,4 @@ BEGIN
 
   RETURN return_cursor;
 END;
+```
