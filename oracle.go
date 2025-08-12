@@ -127,7 +127,7 @@ func (d Dialector) RewriteLimit(c clause.Clause, builder clause.Builder) {
 	}
 }
 
-//Oracle11 Limit
+// Oracle11 Limit 只是为了让 Gorm 中 First、Save 涉及到Limit 的这几个方法能用,不具备完整的分页功能
 func (d Dialector) RewriteLimit11(c clause.Clause, builder clause.Builder) {
 	if limit, ok := c.Expression.(clause.Limit); ok {
 		if stmt, ok := builder.(*gorm.Statement); ok {
